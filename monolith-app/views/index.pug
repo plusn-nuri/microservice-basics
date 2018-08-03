@@ -1,9 +1,10 @@
 extends layout
 
 block content
+  
   h1= title
   h2 Welcome #{user.name}!
-
+  
   div
     div.outlined 
       p User #{user.name} id #{user.id} 
@@ -15,3 +16,6 @@ block content
             b= entry
     div.outlined 
       p price $#{cost}
+  hr
+  - var now = new Date();
+  em Fresh as of #{now}
