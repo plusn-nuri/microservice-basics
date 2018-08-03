@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  h2 Welcome #{user.name}!
+
+  div
+    div.outlined 
+      p User #{user.name} id #{user.id} 
+    div.outlined 
+      p Cart #{id} has
+      ul
+        each entry in items
+          li 
+            b= entry
+    div.outlined 
+      p price $#{cost}
