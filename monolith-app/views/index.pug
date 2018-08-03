@@ -2,8 +2,8 @@ extends layout
 
 block content
   
-  h1= title
-  h2 Welcome #{user.name}!
+  h1 Hello Shop!
+  h2 Welcome, #{user.name}.
   
   div
     div.outlined 
@@ -14,8 +14,6 @@ block content
         each entry in items
           li 
             b= entry
-    div.outlined 
-      p price $#{cost}
   hr
-  - var now = new Date();
-  em Fresh as of #{now}
+
+  em Fresh as of #{meta.now} on #{meta.host}

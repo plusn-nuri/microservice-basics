@@ -8,6 +8,13 @@ docker run --name mongo4 -d -p 27017:27017 mongo:4.0
 
 > Note the container is named _mongo4_
 
+## Run the App
+
+```bash
+cd monolith-app
+npm start
+```
+This runs the application. This web applicaiton runs on TCP port 3000. Open a browser to http://localhost:3000/ and check to ensure the application is running.
 ## Build the monolith app
 
 Make sure you change to the `monolith-app` directory!
@@ -25,7 +32,12 @@ This runs the monolith application
 docker run --name monolith -i -p 3000:3000 -d YOURNAME/demo-monolith
 ```
 
-Observer the results
+This runs the container you built, specifying:
+
+- Container will be named _monolith_
+- TCP port 3000 on the host will be mapped to port 3000 in the container
+
+To see if there are any errors, we can check the logs. Run `docker ps` to find the id of your container.
 
 ```bash
 docker ps
@@ -33,7 +45,7 @@ docker ps
 docker logs YOUR_CONTAINER_ID
 ```
 
-What went wrong? The connection in the code wants "localhost" which it assumed was there. But it is on a different "machine" altogether.
+What went wrong? The connection in the code wants "localhost" which it assumed was runnin on the same machine. But docker containers isolate the processes from each other. It might as well be on a different "machine" altogether.
 
 If you look at `monolith-app\app.js`, you will find a line `var mongoDB = process.env.MONGO_URL1 || 'mongodb://localhost:27017/appDemo1';`. This line enables us to override the URL that the app will use to connect to Mongo.
 
