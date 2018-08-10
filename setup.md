@@ -1,19 +1,21 @@
 # Setup
 
-## Run the MongoDB container
+## Run Database Container
 
+We're 
 ```bash
 docker run --name mongo4 -d -p 27017:27017 mongo:4.0
 ```
 
 > Note the container is named _mongo4_
 
-## Run the App
+## Run Monolithic App
 
 ```bash
 cd monolith-app
 npm start
 ```
+
 This runs the application. This web applicaiton runs on TCP port 3000. Open a browser to http://localhost:3000/ and check to ensure the application is running.
 ## Build the monolith app
 
