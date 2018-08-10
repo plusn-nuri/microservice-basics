@@ -8,7 +8,8 @@ We will use `docker-compose` to deliver an application spanning multiple contain
 Create a file named `docker-compose.yml` in the top level folder.
 
 Your directory tree should look something like:
-```
+
+```text
 labs
 │   lab1.md
 │   lab2.txt
@@ -16,13 +17,14 @@ labs
 |
 └___monolith-app
 │   │   ...
-│   
-|___other_dir ...
-
+│
+|___...
 ```
+
 You may use any text editor to manipulate this file. In YAML, spaces are extremely important, so make sure to indent lines using spaces only, 2 spaces per indentation level.
 
 Add a the version and services keys into the compose file:
+
 ```yaml
 version: "3.7"
 
@@ -66,3 +68,13 @@ Run the composition using `docker-compose`
 # cd BASE_DIRECTORY
 docker-compose up
 ```
+
+If all is well, our legacy application should now be running. Point a browser to http://localhost:3000/ and ensure the page renders properly.
+
+No explicit linking is necessary because the 2 containers are created in the same network and the web applicaiton knows the database host name advertised at time of container creation and runtime.
+
+## Stop the composed orchestration
+
+Hit CTRL+C to stop the composition.
+
+> You may run `docker-compose` with the `-d` flag which will daemonize it. In that case, you can stop the composition by running `docker-compose down`.
