@@ -25,10 +25,14 @@ The monolithic application renders a page showing a shopping cart and a user thi
 
 First, let's run the application to ensure it works.
 
-> This application relies on Node V10+. If you do not have node on your host machine, or can't run version 10, you may skip this part.
+> **This application relies on Node V10+. If you do not have node on your host machine, or can't run version 10, you may skip this part.**
 
 ```bash
+# change directory to the monolithic app
 cd ./monolith-app
+# install library dependencies using npm
+npm install
+# run the monolithic application
 npm start
 ```
 
