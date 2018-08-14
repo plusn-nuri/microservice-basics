@@ -36,14 +36,13 @@ npm install
 npm start
 ```
 
-This runs the application. This web applicaiton runs on TCP port 3000. Open a browser to http://localhost:3000/ and check to ensure the application is running.
+This runs the application. This web applicaiton runs on TCP port 3000. Open a browser to <http://localhost:3000/> and check to ensure the application is running.
 
 ## Dockerize Monolith
 
 To take advantage of flexible infrastructure and enable continuous integration, we're going to package the monolithic application.
 
 This is a common "brown field" technique: simply packaging an existing code base so it can be launched in a cloud environment or on modern dev-ops on premises.
-
 
 > Make sure you change directory to the `monolith-app` directory!
 
@@ -125,4 +124,4 @@ docker run -i -p 3000:3000 --env MONGO_URL1="mongodb://mongo4:27017/appDemo1" --
 
 Check the logs to ensure the connection is now successful.
 
-Point a browser to http://localhost:3000/ and ensure the application renders a page showing a shopping cart.
+Point a browser to <http://localhost:3000/> and ensure the application renders a page showing a shopping cart.
