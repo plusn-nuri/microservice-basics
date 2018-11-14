@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: cart-svc
   labels:
-    fleet: cart
+    app: cart
 spec:
   type: NodePort
   ports:
-  - port: 3000
-    nodePort: 30001
+    - port: 80
+      targetPort: 3001
+      protocol: TCP
   selector:
-    fleet: labIII
-    app: cart
+    app: cart-web-api

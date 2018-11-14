@@ -1,23 +1,22 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: cart
+  name: cart-deployment
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      fleet: labIII
+      app: cart-web-api
   template:
     metadata:
       labels:
-        fleet: labIII
-        app: cart
+        app: cart-web-api
     spec:
       containers:
-      - name: cart
+      - name: cart-api-container
         image: nurih/cart-api
         env:
           - name: MONGO_URL1
-            value: mongodb://192.168.154.205:27017/appDemo1
+            value: mongodb://mongo4:27017/appDemo1
         ports:
-        - containerPort: 3000
+        - containerPort: 3001

@@ -4,7 +4,8 @@ kind: Pod
 metadata:
   name: mongo4
   labels:
-    related: lab
+    app: cart-microservice
+    layer: data
 spec:
   containers:
   - name: mongo4-container
