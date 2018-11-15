@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: cart-microservice
+    layer: data
+  name: mongo-svc
+spec:
+  type: ClusterIP
+  ports:
+  - port: 27017 #service exposes this port
+    protocol: TCP
+    targetPort: 27017 #the backing pod exposes this port
+  selector:
+    app: cart-microservice
+    layer: data
+  sessionAffinity: None

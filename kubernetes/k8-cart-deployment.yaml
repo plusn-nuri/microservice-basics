@@ -17,6 +17,6 @@ spec:
         image: nurih/cart-api:0.9.1.1
         env:
           - name: MONGO_URL1
-            value: mongodb://mongo4-exposed:27017/appDemo1
+            value: mongodb://mongo-svc:27017/appDemo1
         ports:
         - containerPort: 3001
