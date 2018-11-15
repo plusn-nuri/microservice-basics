@@ -32,6 +32,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', indexRouter);
 // app.use('/user', userRouter);
 app.use('/cart', cartRouter);
+app.use('/', (req,res,next)=>{
+  res.send('Cart is alive ' + Date());
+})
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
