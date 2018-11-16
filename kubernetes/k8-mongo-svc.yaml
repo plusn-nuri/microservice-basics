@@ -6,7 +6,7 @@ metadata:
     layer: data
   name: mongo-svc
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
   - port: 27017 #service exposes this port
     protocol: TCP
