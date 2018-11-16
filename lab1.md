@@ -52,9 +52,9 @@ cd monolith-app
 docker build -t YOURNAME/demo-monolith .
 ```
 
-### Run the dockerized pplication
+### Run the dockerized application
 
-Runnint the monolithic application is no different from running any "official" container. All we need to take care of is exposing the port so that we can browse the web applciation in the container.
+Running the monolithic application is no different from running any "official" container. All we need to take care of is exposing the port so that we can browse the web applciation in the container.
 
 ```bash
 docker run --name monolith -i -p 3000:3000 -d YOURNAME/demo-monolith
