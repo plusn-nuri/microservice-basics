@@ -9,7 +9,7 @@ In this part, we want to run a monolithic application, backed by a single databa
 
 ### Run Database Container
 
-The monolithic application requires a database to store its data. A databse is commonly orchestrated as a separate resource due to it's stateful and durable nature.
+The monolithic application requires a database to store its data. A database is commonly orchestrated as a separate resource due to it's stateful and durable nature.
 
 In this lab, we'll run the database in a container so that we don't need to install or manage a full blown database.
 
@@ -36,7 +36,7 @@ npm install
 npm start
 ```
 
-This runs the application. This web applicaiton runs on TCP port 3000. Open a browser to <http://localhost:3000/> and check to ensure the application is running.
+This runs the application. This web application runs on TCP port 3000. Open a browser to <http://localhost:3000/> and check to ensure the application is running.
 
 ## Dockerize Monolith
 
@@ -51,9 +51,9 @@ cd monolith-app
 docker build -t YOURNAME/demo-monolith .
 ```
 
-### Run the dockerized pplication
+### Run the dockerized application
 
-Runnint the monolithic application is no different from running any "official" container. All we need to take care of is exposing the port so that we can browse the web applciation in the container.
+Running the monolithic application is no different from running any "official" container. All we need to take care of is exposing the port so that we can browse the web application in the container.
 
 ```bash
 docker run --name monolith -i -p 3000:3000 -d YOURNAME/demo-monolith
@@ -101,7 +101,7 @@ Note the entry that resembles:
             ...
 ```
 
-The IPv4Address  lists __172.17.0.2__ as the IP of the Mongo container. Your IP may differ, so note the IP that YOUR container is assigned.
+The `IPv4Address` entry  lists __172.17.0.2__ as the IP of the Mongo container. Your IP may differ, so note the IP that YOUR container is assigned.
 
 ```bash
 docker run --name monolith --env MONGO_URL1="mongodb://172.17.0.2:27017/appDemo1" -i -p 3000:3000 -d YOURNAME/demo-monolith
@@ -124,4 +124,4 @@ docker run -i -p 3000:3000 --env MONGO_URL1="mongodb://mongo4:27017/appDemo1" --
 
 Check the logs to ensure the connection is now successful.
 
-Point a browser to <http://localhost:3000/> and ensure the application renders a page showing a shopping cart.
+Point a browser to http://localhost:3000/ and ensure the application renders a page showing a shopping cart.
