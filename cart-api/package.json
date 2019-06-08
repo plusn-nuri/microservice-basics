@@ -10,8 +10,8 @@
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
-    "mongoose": "^5.2.6",
-    "morgan": "~1.9.0"
+    "mongoose": "^5.5.13",
+    "morgan": "^1.9.1"
   },
   "devDependencies": {}
 }
